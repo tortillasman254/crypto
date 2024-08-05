@@ -1,6 +1,6 @@
 {
-  "name": "NomDuToken",
-  "symbol": "SYMBOLE",
+  "name": "NotACoin",
+  "symbol": "NTAC",
   "uri": "https://votre-url.com/token_metadata.json",
   "sellerFeeBasisPoints": 0,
   "creators": null,
