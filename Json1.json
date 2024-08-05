@@ -1,7 +1,7 @@
 {
   "name": "NotACoin",
   "symbol": "NTAC",
-  "uri": "https://votre-url.com/token_metadata.json",
+  "uri": "https://raw.githubusercontent.com/tortillasman254/crypto/main/Json2.json",
   "sellerFeeBasisPoints": 0,
   "creators": null,
   "collection": null,
