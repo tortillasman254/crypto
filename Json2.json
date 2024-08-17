@@ -1,7 +1,7 @@
 {
   "name": "NotACoin",
   "symbol": "NTAC",
-  "uri": "https://raw.githubusercontent.com/tortillasman254/crypto/4cf05fa97653870704f60f1d729f0d9bf2eafdeb/logo.png",
+  "image": "https://raw.githubusercontent.com/tortillasman254/crypto/4cf05fa97653870704f60f1d729f0d9bf2eafdeb/logo.png",
   "seller_fee_basis_points": 500,
   "creators": null
 }
