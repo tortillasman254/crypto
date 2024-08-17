@@ -1,7 +1,7 @@
 {
   "name": "NotACoin",
   "symbol": "NTAC",
-  "image": "https://arweave.net/NhiEcctD3V8_O4nGpnDw0pgNbWWI-bRa_HzA6gUdZhc?ext=png",
+  "uri": "https://arweave.net/NhiEcctD3V8_O4nGpnDw0pgNbWWI-bRa_HzA6gUdZhc?ext=png",
   "seller_fee_basis_points": 500,
   "creators": null
 }
